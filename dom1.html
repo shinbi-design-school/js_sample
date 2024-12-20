@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <meta charset="utf-8">
+        <script>
+            function openPanel(id) {
+                const elements = document.getElementsByClassName('panel');
+                for(let i = 0; i < elements.length; i++) {
+                    const element = elements[i];
+                    element.setAttribute('style', 'display: none;');
+                }
+                const panel = document.getElementById(id + '_panel');
+                panel.setAttribute('style', 'display: block;');
+            }
+
+            function initialize() {
+                openPanel('html');
+            }
+
+            window.onload = initialize;
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li><a href="javascript:openPanel('html')">HTML</a></li>
+            <li><a href="javascript:openPanel('css')">CSS</a></li>
+            <li><a href="javascript:openPanel('js')">JavaScript</a></li>
+        </ul>
+        <div id="html_panel" class="panel">
+            <h2>HTML</h2>
+            <p>ホームページの構造を定義</p>
+        </div>
+        <div id="css_panel" class="panel">
+            <h2>CSS</h2>
+            <p>ホームページのデザインを定義</p>
+        </div>
+        <div id="js_panel" class="panel">
+            <h2>JavaScript</h2>
+            <p>ホームページの動きを定義</p>
+        </div>
+    </body>
+</html>

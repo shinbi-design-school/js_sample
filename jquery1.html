@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <meta charset="utf-8">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script>
+            function openPanel(id) {
+                $('.panel').css('display', 'none');
+                $('#' + id + '_panel').css('display', 'block');
+            }
+
+            function initialize() {
+                openPanel('html');
+            }
+
+            $(window).ready(initialize);
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li><a href="javascript:openPanel('html')">HTML</a></li>
+            <li><a href="javascript:openPanel('css')">CSS</a></li>
+            <li><a href="javascript:openPanel('js')">JavaScript</a></li>
+        </ul>
+        <div id="html_panel" class="panel">
+            <h2>HTML</h2>
+            <p>ホームページの構造を定義</p>
+        </div>
+        <div id="css_panel" class="panel">
+            <h2>CSS</h2>
+            <p>ホームページのデザインを定義</p>
+        </div>
+        <div id="js_panel" class="panel">
+            <h2>JavaScript</h2>
+            <p>ホームページの動きを定義</p>
+        </div>
+    </body>
+</html>

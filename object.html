@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BMI</title>
+        <meta charset="utf-8">
+        <script>
+            function showStatus(human) {
+                const message = human.name + 'の身長は' + human.height + 'cm。'
+                            + '体重は' + human.weight + 'kg。'
+                            + 'BMIは' + human.calculateBmi() + 'です。<br>'
+                document.write(message);
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            const takeshi = {
+                name: 'たけし',
+                height: 170,
+                weight: 100,
+                calculateBmi: function() {
+                    const meter = this.height / 100;
+                    const bmi = this.weight / (meter * meter);
+                    return bmi;
+                }
+            };
+            showStatus(takeshi);
+            takeshi.weight -= 20;
+            showStatus(takeshi);
+        </script>
+    </body>
+</html>
